@@ -4,15 +4,6 @@ protocol UpdateYouTubeLinkDelegate: AnyObject {
     func updateURL(url: URL)
 }
 
-
-
-// MARK: - Properties
-// MARK: Public
-// MARK: Private
-
-// MARK: - API
-
-
 final class YouTubeLinkController: UIViewController {
     
     // MARK: - Outlets
@@ -23,7 +14,7 @@ final class YouTubeLinkController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        urlTextField.setUnderLine(.gray)
+        setupURLTextField()
     }
     
     // MARK: - Actions
@@ -41,8 +32,8 @@ final class YouTubeLinkController: UIViewController {
     // MARK: - Setups
     // MARK: - Helpers
     private func validateUrl() -> Bool {
-      let urlRegEx = "((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+"
-      return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self)
+        let urlRegEx = "((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+"
+        return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self)
     }
     
     private func showAllert(_ msg: String) {
@@ -52,4 +43,15 @@ final class YouTubeLinkController: UIViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func setupURLTextField() {
+        urlTextField.delegate = self
+        urlTextField.setUnderLine(.gray)
+        urlTextField.keyboardType = .URL
+    }
 }
+

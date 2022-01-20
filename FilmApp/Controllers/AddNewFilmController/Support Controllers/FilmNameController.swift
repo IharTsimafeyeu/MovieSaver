@@ -8,7 +8,7 @@ protocol UpdateFilmNameDelegate: AnyObject {
 }
 
 final class FilmNameController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet private weak var filmNameTextField: UITextField!
     
@@ -18,15 +18,15 @@ final class FilmNameController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        setupTextField()
     }
     
     // MARK: - Actions
     @IBAction private func saveFilmName(_ sender: UIButton) {
         if filmNameTextField.text != "" {
-        let text = filmNameTextField.text ?? ""
-        delegate?.updateName(filmName: text)
-        navigationController?.popViewController(animated: true)
+            let text = filmNameTextField.text ?? ""
+            delegate?.updateName(filmName: text)
+            navigationController?.popViewController(animated: true)
         } else {
             alertForFilmName("Please fill name movie")
         }
@@ -44,7 +44,16 @@ final class FilmNameController: UIViewController {
     
     // MARK: Private
     // MARK: - Setups
-    private func addSubviews() {
+    private func setupTextField() {
+        filmNameTextField.delegate = self
         filmNameTextField.setUnderLine(.gray)
+        filmNameTextField.keyboardType = .default
+        filmNameTextField.autocapitalizationType = .sentences
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
+
+

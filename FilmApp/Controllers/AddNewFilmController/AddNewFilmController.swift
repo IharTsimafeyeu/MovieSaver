@@ -1,6 +1,4 @@
 import UIKit
-//import Photos
-//import PhotosUI
 
 protocol SaveFilmDelegate: AnyObject {
     func saveFilm(film: Film)
@@ -22,14 +20,19 @@ final class AddNewFilmController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        setupDescription()
         addRecognizerForImageView()
         title = "Add new"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        filmPhotoImageView.layer.cornerRadius = filmPhotoImageView.frame.size.width / 2
+    }
+    
     //MARK: Setups
-    private func addSubviews() {
+    private func setupDescription() {
         descriptionTextView.layer.borderColor = UIColor.opaqueSeparator.cgColor
         descriptionTextView.layer.borderWidth = 1
     }
@@ -84,11 +87,11 @@ final class AddNewFilmController: UIViewController {
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()
         }))
-
+        
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
             self.openGallery()
         }))
-
+        
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
@@ -116,7 +119,7 @@ final class AddNewFilmController: UIViewController {
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = false
-            present(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true, completion: nil)
         } else {
             let alert  = UIAlertController(title: "Warning", message: "Your device don't have camera.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -139,32 +142,3 @@ final class AddNewFilmController: UIViewController {
     }
 }
 
-
-//extension AddNewFilmController: PHPickerViewControllerDelegate {
-//    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-//        dismiss(animated: true, completion: nil)
-//        for item in results {
-//            item.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
-//
-//                if let image = image as? UIImage {
-//                    print(image)
-//
-//                    DispatchQueue.main.async {
-//                        self.filmPhotoImageView?.image = image
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-
-//    private func presentPickerView() {
-//        var configuration: PHPickerConfiguration = PHPickerConfiguration()
-//        configuration.filter = PHPickerFilter.images
-//        configuration.selectionLimit = 1
-//
-//        let picker: PHPickerViewController = PHPickerViewController(configuration: configuration)
-//        picker.delegate = self
-//        present(picker, animated: true, completion: nil)
-//    }
-//

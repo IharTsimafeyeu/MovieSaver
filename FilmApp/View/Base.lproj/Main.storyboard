@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,13 +78,13 @@
                                             <constraint firstAttribute="height" constant="65" id="7Eh-uE-RZL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Manrope-Bold" family="Manrope" pointSize="24"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="ElementBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Ix-0M-ikT">
                                         <rect key="frame" x="19" y="153" width="376" height="174"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="backgroundColor" name="ViewBackgroundColor"/>
+                                        <color key="textColor" name="ViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -92,14 +93,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68y-R7-3kG">
+                                    <wkWebView alpha="0.0" contentMode="scaleAspectFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="68y-R7-3kG">
                                         <rect key="frame" x="15" y="347" width="384" height="283"/>
+                                        <color key="backgroundColor" name="ViewBackgroundColor"/>
+                                        <color key="tintColor" name="ViewBackgroundColor"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tx-i7-WIi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tx-i7-WIi">
                                         <rect key="frame" x="18" y="110" width="346" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="hb7-OE-Ffl"/>
@@ -109,7 +112,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="ViewBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstItem="9Ix-0M-ikT" firstAttribute="leading" secondItem="SpR-6q-4Wc" secondAttribute="leading" constant="19" id="1Ys-mK-o9X"/>
@@ -135,7 +138,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rcO-X2-8ug"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rcO-X2-8ug" firstAttribute="trailing" secondItem="SpR-6q-4Wc" secondAttribute="trailing" id="0GB-AJ-OQB"/>
                             <constraint firstItem="rcO-X2-8ug" firstAttribute="trailing" secondItem="ohm-Y7-pul" secondAttribute="trailing" id="2E5-6w-Hjc"/>
@@ -285,17 +288,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-2I-xkF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="hLS-HX-f4p">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled" translatesAutoresizingMaskIntoConstraints="NO" id="hLS-HX-f4p">
                                                 <rect key="frame" x="132" y="27" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="ME9-Lp-KlA"/>
                                                     <constraint firstAttribute="height" constant="150" id="k82-oj-CvF"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="70"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YG5-J3-2s4">
                                                 <rect key="frame" x="21" y="209" width="372" height="200"/>
@@ -527,7 +525,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qGn-Nc-ain">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Nm5-po-Hah">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="Nm5-po-Hah">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0MF-a0-7PL">
                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -695,7 +693,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image" width="150" height="150"/>
+        <image name="Untitled" width="200" height="200"/>
+        <namedColor name="ElementBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ViewBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

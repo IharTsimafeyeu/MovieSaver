@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +25,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="421" height="171"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOD-kZ-LPU">
+                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOD-kZ-LPU">
                         <rect key="frame" x="15" y="5" width="391" height="161"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLh-mP-LIE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLh-mP-LIE">
                                 <rect key="frame" x="0.0" y="0.0" width="215" height="161"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -48,8 +49,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="ViewBackgroundColor"/>
+                        <color key="tintColor" name="ViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IUQ-3m-o2K" firstAttribute="leading" secondItem="yLh-mP-LIE" secondAttribute="trailing" constant="20" id="01y-dx-22L"/>
                             <constraint firstItem="yLh-mP-LIE" firstAttribute="leading" secondItem="OOD-kZ-LPU" secondAttribute="leading" id="1ap-2G-tM9"/>
@@ -89,4 +90,9 @@
             <point key="canvasLocation" x="193" y="119"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="ViewBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -34,9 +34,9 @@
 		35D178DC277F0A75005AF01C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D178DA277F0A75005AF01C /* Main.storyboard */; };
 		35D178DE277F0A76005AF01C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D178DD277F0A76005AF01C /* Assets.xcassets */; };
 		35D178E1277F0A76005AF01C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D178DF277F0A76005AF01C /* LaunchScreen.storyboard */; };
-		35D2A96C279454F600F425A2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D2A96B279454F600F425A2 /* Constant.swift */; };
 		35D49B952787139100202E1C /* InfoAboutFilmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D49B942787139100202E1C /* InfoAboutFilmController.swift */; };
 		35E1110F27879AF600BCE781 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1110E27879AF600BCE781 /* Model.swift */; };
+		35FF307F2798231A00C12AFE /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF307E2798231A00C12AFE /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +69,9 @@
 		35D178DD277F0A76005AF01C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D178E0277F0A76005AF01C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35D178E2277F0A76005AF01C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35D2A96B279454F600F425A2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		35D49B942787139100202E1C /* InfoAboutFilmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutFilmController.swift; sourceTree = "<group>"; };
 		35E1110E27879AF600BCE781 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		35FF307E2798231A00C12AFE /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +96,9 @@
 		35066E022780CF6D00DD5B0A /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				35D2A96A279454E200F425A2 /* Enum Constance */,
 				3555C9002791701C00CF42D2 /* Fonts */,
 				35D178D4277F0A75005AF01C /* AppDelegate.swift */,
+				35FF307E2798231A00C12AFE /* AppColor.swift */,
 				35D178D6277F0A75005AF01C /* SceneDelegate.swift */,
 				35D178DD277F0A76005AF01C /* Assets.xcassets */,
 				35D178DF277F0A76005AF01C /* LaunchScreen.storyboard */,
@@ -227,14 +227,6 @@
 			path = FilmApp;
 			sourceTree = "<group>";
 		};
-		35D2A96A279454E200F425A2 /* Enum Constance */ = {
-			isa = PBXGroup;
-			children = (
-				35D2A96B279454F600F425A2 /* Constant.swift */,
-			);
-			path = "Enum Constance";
-			sourceTree = "<group>";
-		};
 		35D49B932787135E00202E1C /* InfoAboutFilmController */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,11 +345,11 @@
 				35497E7C2782218500D9B5AE /* FilmNameController.swift in Sources */,
 				3521C8F32791F8B200127412 /* VCDelegates.swift in Sources */,
 				35497E7A27821DE200D9B5AE /* ReleaseDateController.swift in Sources */,
-				35D2A96C279454F600F425A2 /* Constant.swift in Sources */,
 				35D49B952787139100202E1C /* InfoAboutFilmController.swift in Sources */,
 				35D178D9277F0A75005AF01C /* ViewController.swift in Sources */,
 				3555C91327917E3C00CF42D2 /* UIFont+.swift in Sources */,
 				351CCC2D2780C43A00AFDD6E /* TableViewCell.swift in Sources */,
+				35FF307F2798231A00C12AFE /* AppColor.swift in Sources */,
 				35E1110F27879AF600BCE781 /* Model.swift in Sources */,
 				3521C8F12791F88100127412 /* ImagePickerDelegate.swift in Sources */,
 				35066E0C2780D13700DD5B0A /* AddNewFilmController.swift in Sources */,
