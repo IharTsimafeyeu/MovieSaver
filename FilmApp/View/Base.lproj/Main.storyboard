@@ -15,6 +15,9 @@
         <array key="Manrope-Medium.ttf">
             <string>Manrope-Medium</string>
         </array>
+        <array key="Manrope-Regular.ttf">
+            <string>Manrope-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -84,8 +87,8 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Ix-0M-ikT">
                                         <rect key="frame" x="19" y="153" width="376" height="174"/>
                                         <color key="backgroundColor" name="ViewBackgroundColor"/>
-                                        <color key="textColor" name="ViewBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="ElementBackgroundColor"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Regular" family="Manrope" pointSize="0.0"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -283,7 +286,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJz-Pd-fGe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1078"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-2I-xkF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
@@ -524,19 +527,7 @@
                             <constraint firstItem="xJz-Pd-fGe" firstAttribute="leading" secondItem="eg1-BX-S7S" secondAttribute="leading" id="pis-xe-CWG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qGn-Nc-ain">
-                        <barButtonItem key="rightBarButtonItem" style="done" id="Nm5-po-Hah">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0MF-a0-7PL">
-                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                <connections>
-                                    <action selector="saveFilmBarButton:" destination="Z2v-yS-PmM" eventType="touchUpInside" id="hNg-F7-zdO"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="qGn-Nc-ain"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="yum-En-mlm" id="4zj-3A-NtI"/>
@@ -549,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNN-bC-qtW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="-949"/>
+            <point key="canvasLocation" x="3677" y="-1231"/>
         </scene>
         <!--Release Date Controller-->
         <scene sceneID="deT-xE-483">
@@ -672,24 +663,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7S-Ci-yfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="667" y="108"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Kp1-Vj-xpK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RsS-Cu-hH2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0BN-ov-tpU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Z2v-yS-PmM" kind="relationship" relationship="rootViewController" id="SFr-sZ-zR1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BDj-CO-12d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2851" y="-1231"/>
         </scene>
     </scenes>
     <resources>

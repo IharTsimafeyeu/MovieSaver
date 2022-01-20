@@ -41,7 +41,6 @@ final class UserRatingController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-
 //MARK: UIPickerViewDataSource, UIPickerViewDelegate
 extension UserRatingController: UIPickerViewDataSource, UIPickerViewDelegate  {
     

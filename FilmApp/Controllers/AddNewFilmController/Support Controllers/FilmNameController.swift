@@ -1,7 +1,4 @@
 import UIKit
-// MARK: Public
-// MARK: - API
-
 
 protocol UpdateFilmNameDelegate: AnyObject {
     func updateName(filmName: String)
@@ -32,16 +29,6 @@ final class FilmNameController: UIViewController {
         }
     }
     
-    // MARK: - Helpers
-    // MARK: Private
-    private func alertForFilmName(_ msg: String) {
-        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.filmNameTextField.setUnderLine(.red)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
     // MARK: Private
     // MARK: - Setups
     private func setupTextField() {
@@ -54,6 +41,17 @@ final class FilmNameController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    // MARK: - Helpers
+    // MARK: Private
+    private func alertForFilmName(_ msg: String) {
+        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.filmNameTextField.setUnderLine(.red)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 

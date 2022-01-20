@@ -22,8 +22,8 @@ final class AddNewFilmController: UIViewController {
         super.viewDidLoad()
         setupDescription()
         addRecognizerForImageView()
-        title = "Add new"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        setupNavigationController()
+    
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,6 +32,12 @@ final class AddNewFilmController: UIViewController {
     }
     
     //MARK: Setups
+    private func setupNavigationController() {
+        title = "Add new"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(savePhotoBarButton))
+    }
+    
     private func setupDescription() {
         descriptionTextView.layer.borderColor = UIColor.opaqueSeparator.cgColor
         descriptionTextView.layer.borderWidth = 1
@@ -82,6 +88,17 @@ final class AddNewFilmController: UIViewController {
         }
     }
     
+    @objc func savePhotoBarButton() {
+        let film = Film(name: filmNameLabel.text ?? "",
+                        rating: ratingLabel.text ?? "",
+                        date: releaseDateLabel.text ?? "",
+                        image: filmPhotoImageView.image ?? UIImage(imageLiteralResourceName: "empty.png"),
+                        youtubeLink: URL(string: youtubeLinkLabel.text!)!,
+                        description: descriptionTextView.text ?? "")
+        delegate?.saveFilm(film: film)
+        navigationController?.popViewController(animated: true)
+    }
+    
     @objc func pickPhotoAction() {
         let alert = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
@@ -119,7 +136,7 @@ final class AddNewFilmController: UIViewController {
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
+            present(imagePicker, animated: true, completion: nil)
         } else {
             let alert  = UIAlertController(title: "Warning", message: "Your device don't have camera.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -139,6 +156,48 @@ final class AddNewFilmController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+    }
+}
+
+//MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension AddNewFilmController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[.editedImage] as? UIImage {
+            filmPhotoImageView.image = image
+        }
+        if let image = info[.originalImage] as? UIImage {
+            filmPhotoImageView.image = image
+        }
+    }
+}
+
+//MARK: UpdateYouTubeLinkDelegate
+extension AddNewFilmController: UpdateYouTubeLinkDelegate {
+    func updateURL(url: URL) {
+        youtubeLinkLabel.text = url.absoluteString
+    }
+}
+
+//MARK: UpdateRatingDelegate
+extension AddNewFilmController: UpdateRatingDelegate {
+    func updateGrade(rating: String) {
+        ratingLabel.text = rating
+    }
+}
+
+//MARK: UpdateDateDelegate
+extension AddNewFilmController: UpdateDateDelegate {
+    func updateDate(date: String) {
+        releaseDateLabel.text = date
+    }
+}
+
+//MARK: UpdateFilmNameDelegate
+extension AddNewFilmController: UpdateFilmNameDelegate {
+    func updateName(filmName: String) {
+        filmNameLabel.text = filmName
     }
 }
 
