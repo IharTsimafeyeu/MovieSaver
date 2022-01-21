@@ -11,16 +11,5 @@ extension UITextField {
         self.layer.masksToBounds = true
     }
 }
-//MARK: urlTextField.delegate
-extension YouTubeLinkController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-    }
-}
-//MARK: filmNameTextField.delegate
-extension FilmNameController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-    }
-}
+
 

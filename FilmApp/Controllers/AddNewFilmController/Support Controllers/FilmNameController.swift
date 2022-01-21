@@ -53,5 +53,11 @@ final class FilmNameController: UIViewController {
     }
 
 }
+//MARK: filmNameTextField.delegate
+extension FilmNameController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+    }
+}
 
 

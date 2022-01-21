@@ -174,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YouTube Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-Qb-YYc">
-                                <rect key="frame" x="133.5" y="176" width="147.5" height="33"/>
+                                <rect key="frame" x="135.5" y="176" width="143.5" height="28"/>
                                 <fontDescription key="fontDescription" name="Manrope-Medium" family="Manrope" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -188,7 +188,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cg-Z1-mff">
-                                <rect key="frame" x="174.5" y="322" width="65" height="39"/>
+                                <rect key="frame" x="175" y="322" width="64" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" name="Manrope-Medium" family="Manrope" pointSize="18"/>
@@ -228,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBc-Q2-S99">
-                                <rect key="frame" x="149.5" y="168" width="115" height="33"/>
+                                <rect key="frame" x="149.5" y="168" width="115" height="28"/>
                                 <fontDescription key="fontDescription" name="Manrope-Medium" family="Manrope" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -289,7 +289,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-2I-xkF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="843"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled" translatesAutoresizingMaskIntoConstraints="NO" id="hLS-HX-f4p">
                                                 <rect key="frame" x="132" y="27" width="150" height="150"/>
@@ -473,13 +473,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0U-g4-DIE">
-                                                <rect key="frame" x="36" y="431" width="342" height="25"/>
+                                                <rect key="frame" x="36" y="431" width="342" height="21"/>
                                                 <fontDescription key="fontDescription" name="Manrope-Medium" family="Manrope" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yum-En-mlm">
-                                                <rect key="frame" x="32" y="467" width="350" height="175"/>
+                                                <rect key="frame" x="32" y="463" width="350" height="175"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="175" id="Oka-ba-kTg"/>
@@ -568,7 +568,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VP8-uu-AEd">
-                                <rect key="frame" x="174.5" y="452" width="65" height="39"/>
+                                <rect key="frame" x="175" y="452" width="64" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" name="Manrope-Medium" family="Manrope" pointSize="18"/>
@@ -606,7 +606,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaq-JD-R5C">
-                                <rect key="frame" x="143" y="168" width="128.5" height="26"/>
+                                <rect key="frame" x="145" y="168" width="124.5" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="OMS-Wl-jdq"/>
                                 </constraints>
@@ -615,7 +615,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSM-ge-KxP">
-                                <rect key="frame" x="174.5" y="389" width="65" height="39"/>
+                                <rect key="frame" x="175" y="389" width="64" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" name="Manrope-Medium" family="Manrope" pointSize="18"/>
