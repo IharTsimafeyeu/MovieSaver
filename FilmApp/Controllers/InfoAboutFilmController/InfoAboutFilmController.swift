@@ -22,7 +22,7 @@ final class InfoAboutFilmController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addInfoToItems()
-        addSubviews()
+        setupTextView()
     }
     
     // MARK: - Setups
@@ -38,7 +38,7 @@ final class InfoAboutFilmController: UIViewController {
         filmVideoWebView.load(URLRequest(url: url))
     }
     
-    private func addSubviews() {
+    private func setupTextView() {
         descriptionTextView.layer.borderColor = UIColor.opaqueSeparator.cgColor
         descriptionTextView.layer.borderWidth = 1
     }

@@ -54,4 +54,10 @@ final class YouTubeLinkController: UIViewController {
         urlTextField.keyboardType = .URL
     }
 }
+//MARK: urlTextField.delegate
+extension YouTubeLinkController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+    }
+}
 

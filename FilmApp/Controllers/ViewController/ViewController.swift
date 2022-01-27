@@ -12,6 +12,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupNavigationController()
     }
 
     // MARK: - Actions
@@ -24,9 +25,12 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - Setups
-    private func setupTableView() {
+    private func setupNavigationController() {
         title = "My Movie List"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
+    private func setupTableView() {
         tableView.rowHeight = 212
         tableView.dataSource = self
         tableView.delegate = self

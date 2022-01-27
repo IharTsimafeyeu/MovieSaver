@@ -23,7 +23,6 @@ final class AddNewFilmController: UIViewController {
         setupDescription()
         addRecognizerForImageView()
         setupNavigationController()
-    
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,6 +31,7 @@ final class AddNewFilmController: UIViewController {
     }
     
     //MARK: Setups
+    //MARK: Private
     private func setupNavigationController() {
         title = "Add new"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -50,6 +50,7 @@ final class AddNewFilmController: UIViewController {
     }
     
     //MARK: Actions
+    //MARK: Private
     @IBAction private func saveFilmBarButton(_ sender: Any) {
         let film = Film(name: filmNameLabel.text ?? "",
                         rating: ratingLabel.text ?? "",
