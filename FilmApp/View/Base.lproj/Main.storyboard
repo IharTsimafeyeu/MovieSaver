@@ -549,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNN-bC-qtW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="-949"/>
+            <point key="canvasLocation" x="3479.7101449275365" y="-949.55357142857133"/>
         </scene>
         <!--Release Date Controller-->
         <scene sceneID="deT-xE-483">
@@ -695,7 +695,7 @@
     <resources>
         <image name="Untitled" width="200" height="200"/>
         <namedColor name="ElementBackgroundColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ViewBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

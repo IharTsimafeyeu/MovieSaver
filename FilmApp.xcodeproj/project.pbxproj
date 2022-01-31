@@ -12,8 +12,6 @@
 		351CCC2E2780C43A00AFDD6E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351CCC2C2780C43A00AFDD6E /* TableViewCell.xib */; };
 		3521792D278F286000FFBAC8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3521792C278F286000FFBAC8 /* String+.swift */; };
 		3521792F278F289300FFBAC8 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3521792E278F289300FFBAC8 /* UITextField+.swift */; };
-		3521C8F12791F88100127412 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3521C8F02791F88100127412 /* ImagePickerDelegate.swift */; };
-		3521C8F32791F8B200127412 /* VCDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3521C8F22791F8B200127412 /* VCDelegates.swift */; };
 		35497E7A27821DE200D9B5AE /* ReleaseDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35497E7927821DE200D9B5AE /* ReleaseDateController.swift */; };
 		35497E7C2782218500D9B5AE /* FilmNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35497E7B2782218500D9B5AE /* FilmNameController.swift */; };
 		3555C9082791704D00CF42D2 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3555C9012791704D00CF42D2 /* Manrope-Regular.ttf */; };
@@ -25,7 +23,6 @@
 		3555C90E2791704D00CF42D2 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3555C9072791704D00CF42D2 /* Manrope-SemiBold.ttf */; };
 		3555C91027917DC800CF42D2 /* EnumFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3555C90F27917DC800CF42D2 /* EnumFonts.swift */; };
 		3555C91327917E3C00CF42D2 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3555C91227917E3C00CF42D2 /* UIFont+.swift */; };
-		357D00AA27905DA800A5962B /* AddNewFilmDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357D00A927905DA800A5962B /* AddNewFilmDelegates.swift */; };
 		358DFF252780F4A2005FF68F /* UserRatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358DFF242780F4A2005FF68F /* UserRatingController.swift */; };
 		35955544278DBA5F00FB2A13 /* YouTubeLinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955543278DBA5F00FB2A13 /* YouTubeLinkController.swift */; };
 		35D178D5277F0A75005AF01C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D178D4277F0A75005AF01C /* AppDelegate.swift */; };
@@ -45,8 +42,6 @@
 		351CCC2C2780C43A00AFDD6E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		3521792C278F286000FFBAC8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		3521792E278F289300FFBAC8 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		3521C8F02791F88100127412 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
-		3521C8F22791F8B200127412 /* VCDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDelegates.swift; sourceTree = "<group>"; };
 		35497E7927821DE200D9B5AE /* ReleaseDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseDateController.swift; sourceTree = "<group>"; };
 		35497E7B2782218500D9B5AE /* FilmNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmNameController.swift; sourceTree = "<group>"; };
 		3555C9012791704D00CF42D2 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
@@ -58,7 +53,6 @@
 		3555C9072791704D00CF42D2 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-SemiBold.ttf"; sourceTree = "<group>"; };
 		3555C90F27917DC800CF42D2 /* EnumFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFonts.swift; sourceTree = "<group>"; };
 		3555C91227917E3C00CF42D2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
-		357D00A927905DA800A5962B /* AddNewFilmDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmDelegates.swift; sourceTree = "<group>"; };
 		358DFF242780F4A2005FF68F /* UserRatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingController.swift; sourceTree = "<group>"; };
 		35955543278DBA5F00FB2A13 /* YouTubeLinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeLinkController.swift; sourceTree = "<group>"; };
 		35D178D1277F0A75005AF01C /* FilmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,22 +121,11 @@
 		35394765278DC7770059322F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				35394766278DC78E0059322F /* Delegates */,
 				3555C91127917E1400CF42D2 /* UIFont+ */,
 				35E18256278E1462005DEE3C /* String+ */,
 				35E18255278E1454005DEE3C /* UITextField+ */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		35394766278DC78E0059322F /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				357D00A927905DA800A5962B /* AddNewFilmDelegates.swift */,
-				3521C8F02791F88100127412 /* ImagePickerDelegate.swift */,
-				3521C8F22791F8B200127412 /* VCDelegates.swift */,
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 		3555C9002791701C00CF42D2 /* Fonts */ = {
@@ -341,9 +324,7 @@
 				35955544278DBA5F00FB2A13 /* YouTubeLinkController.swift in Sources */,
 				3555C91027917DC800CF42D2 /* EnumFonts.swift in Sources */,
 				3521792F278F289300FFBAC8 /* UITextField+.swift in Sources */,
-				357D00AA27905DA800A5962B /* AddNewFilmDelegates.swift in Sources */,
 				35497E7C2782218500D9B5AE /* FilmNameController.swift in Sources */,
-				3521C8F32791F8B200127412 /* VCDelegates.swift in Sources */,
 				35497E7A27821DE200D9B5AE /* ReleaseDateController.swift in Sources */,
 				35D49B952787139100202E1C /* InfoAboutFilmController.swift in Sources */,
 				35D178D9277F0A75005AF01C /* ViewController.swift in Sources */,
@@ -351,7 +332,6 @@
 				351CCC2D2780C43A00AFDD6E /* TableViewCell.swift in Sources */,
 				35FF307F2798231A00C12AFE /* AppColor.swift in Sources */,
 				35E1110F27879AF600BCE781 /* Model.swift in Sources */,
-				3521C8F12791F88100127412 /* ImagePickerDelegate.swift in Sources */,
 				35066E0C2780D13700DD5B0A /* AddNewFilmController.swift in Sources */,
 				358DFF252780F4A2005FF68F /* UserRatingController.swift in Sources */,
 				35D178D5277F0A75005AF01C /* AppDelegate.swift in Sources */,

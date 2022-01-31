@@ -22,8 +22,7 @@ final class AddNewFilmController: UIViewController {
         super.viewDidLoad()
         setupDescription()
         addRecognizerForImageView()
-        title = "Add new"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        setupNavigation()
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,6 +40,11 @@ final class AddNewFilmController: UIViewController {
         let button = UITapGestureRecognizer(target: self, action: #selector(pickPhotoAction))
         filmPhotoImageView.isUserInteractionEnabled = true
         filmPhotoImageView.addGestureRecognizer(button)
+    }
+    
+    private func setupNavigation() {
+        title = "Add new"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     //MARK: Actions
@@ -142,3 +146,44 @@ final class AddNewFilmController: UIViewController {
     }
 }
 
+//MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension AddNewFilmController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[.editedImage] as? UIImage {
+            filmPhotoImageView.image = image
+        }
+        if let image = info[.originalImage] as? UIImage {
+            filmPhotoImageView.image = image
+        }
+    }
+}
+
+//MARK: UpdateYouTubeLinkDelegate
+extension AddNewFilmController: UpdateYouTubeLinkDelegate {
+    func updateURL(url: URL) {
+        youtubeLinkLabel.text = url.absoluteString
+    }
+}
+
+//MARK: UpdateRatingDelegate
+extension AddNewFilmController: UpdateRatingDelegate {
+    func updateGrade(rating: String) {
+        ratingLabel.text = rating
+    }
+}
+
+//MARK: UpdateDateDelegate
+extension AddNewFilmController: UpdateDateDelegate {
+    func updateDate(date: String) {
+        releaseDateLabel.text = date
+    }
+}
+
+//MARK: UpdateFilmNameDelegate
+extension AddNewFilmController: UpdateFilmNameDelegate {
+    func updateName(filmName: String) {
+        filmNameLabel.text = filmName
+    }
+}
