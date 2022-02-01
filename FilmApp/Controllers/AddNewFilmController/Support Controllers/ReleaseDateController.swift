@@ -3,15 +3,11 @@ import UIKit
 protocol UpdateDateDelegate: AnyObject {
     func updateDate(date: String)
 }
-
 final class ReleaseDateController: UIViewController {
-    
     // MARK: - Outlets
     @IBOutlet private weak var datePicker: UIDatePicker!
-    
     // MARK: - Properties
     weak var delegate: UpdateDateDelegate?
-    
     // MARK: - Actions
     @IBAction private func saveDate(_ sender: Any) {
         let formatter = DateFormatter()
@@ -20,4 +16,3 @@ final class ReleaseDateController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
-

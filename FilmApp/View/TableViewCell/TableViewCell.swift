@@ -1,23 +1,19 @@
 import UIKit
 
 final class TableViewCell: UITableViewCell {
-    
     // MARK: - Properties
     // MARK: Public
     static let identifier = "TableViewCell"
-    
     // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var filmLogoImageView: UIImageView!
     @IBOutlet weak var filmNameLabel: UILabel!
     @IBOutlet weak var ratingFilmLabel: UILabel!
-    
-    //MARK: - Lifecycle 
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupShadowForCell()
     }
-    
     // MARK: - Setups
     func setupCellData(parameters: Film) {
         filmNameLabel.text = parameters.name
@@ -29,5 +25,4 @@ final class TableViewCell: UITableViewCell {
         containerView.layer.shadowOpacity = 0.5
         containerView.layer.shadowRadius = 1
     }
-    
 }

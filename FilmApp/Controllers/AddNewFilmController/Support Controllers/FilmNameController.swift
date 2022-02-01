@@ -1,26 +1,20 @@
 import UIKit
 // MARK: Public
 // MARK: - API
-
-
 protocol UpdateFilmNameDelegate: AnyObject {
     func updateName(filmName: String)
 }
 
 final class FilmNameController: UIViewController {
-    
     // MARK: - Outlets
     @IBOutlet private weak var filmNameTextField: UITextField!
-    
     // MARK: - Properties
     weak var delegate: UpdateFilmNameDelegate?
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
     }
-    
     // MARK: - Actions
     @IBAction private func saveFilmName(_ sender: UIButton) {
         if filmNameTextField.text != "" {
@@ -31,7 +25,6 @@ final class FilmNameController: UIViewController {
             alertForFilmName("Please fill name movie")
         }
     }
-    
     // MARK: - Helpers
     // MARK: Private
     private func alertForFilmName(_ msg: String) {
@@ -41,7 +34,6 @@ final class FilmNameController: UIViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
-    
     // MARK: Private
     // MARK: - Setups
     private func setupTextField() {
@@ -50,13 +42,11 @@ final class FilmNameController: UIViewController {
         filmNameTextField.keyboardType = .default
         filmNameTextField.autocapitalizationType = .sentences
     }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
 }
-
-//MARK: filmNameTextField.delegate
+// MARK: filmNameTextField.delegate
 extension FilmNameController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
