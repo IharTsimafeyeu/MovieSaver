@@ -3,9 +3,10 @@ import UIKit
 protocol UpdateDateDelegate: AnyObject {
     func updateDate(date: String)
 }
+
 final class ReleaseDateController: UIViewController {
     // MARK: - Outlets
-    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private var datePicker: UIDatePicker!
     // MARK: - Properties
     weak var delegate: UpdateDateDelegate?
     // MARK: - Actions

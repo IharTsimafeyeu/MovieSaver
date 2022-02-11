@@ -1,6 +1,6 @@
 import UIKit
 
-final class Film {
+struct Film {
     var name: String
     var rating: String
     var date: String

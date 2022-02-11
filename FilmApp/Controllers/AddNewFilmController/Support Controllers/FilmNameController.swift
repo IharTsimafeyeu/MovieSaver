@@ -1,4 +1,9 @@
 import UIKit
+
+enum PossibleErrors: Error {
+    case overLimit
+    case emptyField
+}
 // MARK: Public
 // MARK: - API
 protocol UpdateFilmNameDelegate: AnyObject {
@@ -7,7 +12,7 @@ protocol UpdateFilmNameDelegate: AnyObject {
 
 final class FilmNameController: UIViewController {
     // MARK: - Outlets
-    @IBOutlet private weak var filmNameTextField: UITextField!
+    @IBOutlet private var filmNameTextField: UITextField!
     // MARK: - Properties
     weak var delegate: UpdateFilmNameDelegate?
     // MARK: - Lifecycle
@@ -15,16 +20,21 @@ final class FilmNameController: UIViewController {
         super.viewDidLoad()
         setupTextField()
     }
+
     // MARK: - Actions
     @IBAction private func saveFilmName(_ sender: UIButton) {
-        if filmNameTextField.text != "" {
-            let text = filmNameTextField.text ?? ""
-            delegate?.updateName(filmName: text)
-            navigationController?.popViewController(animated: true)
-        } else {
-            alertForFilmName("Please fill name movie")
+
+        do {
+            try checkText()
+        } catch PossibleErrors.emptyField {
+            alertForFilmName("Please fill textfield")
+        } catch PossibleErrors.overLimit {
+            alertForFilmName("It's incorrect text")
+        } catch {
+            print("Unexpected error")
         }
     }
+
     // MARK: - Helpers
     // MARK: Private
     private func alertForFilmName(_ msg: String) {
@@ -34,6 +44,7 @@ final class FilmNameController: UIViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
+
     // MARK: Private
     // MARK: - Setups
     private func setupTextField() {
@@ -42,10 +53,24 @@ final class FilmNameController: UIViewController {
         filmNameTextField.keyboardType = .default
         filmNameTextField.autocapitalizationType = .sentences
     }
+    private func checkText() throws {
+
+        if filmNameTextField.text?.isEmpty == true {
+            throw PossibleErrors.emptyField
+        }
+        if let text = filmNameTextField.text?.count {
+            if text >= 15 {
+                throw PossibleErrors.overLimit
+            }
+        }
+        filmNameTextField.text = ""
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
 }
+
 // MARK: filmNameTextField.delegate
 extension FilmNameController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

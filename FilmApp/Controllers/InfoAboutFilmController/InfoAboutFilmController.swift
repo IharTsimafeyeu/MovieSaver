@@ -1,27 +1,24 @@
 import UIKit
 import WebKit
 
-// MARK: - Actions
-// MARK: - Properties
-// MARK: - API
-
 // MARK: - Helpers
 final class InfoAboutFilmController: UIViewController {
     // MARK: Public
     // MARK: Properties
     public var film: Film?
     // MARK: - Outlets
-    @IBOutlet private weak var filmImageView: UIImageView!
-    @IBOutlet private weak var filmNameLabel: UILabel!
-    @IBOutlet private weak var descriptionTextView: UITextView!
-    @IBOutlet private weak var filmVideoWebView: WKWebView!
-    @IBOutlet private weak var ratingAndDateLabel: UILabel!
+    @IBOutlet private var filmImageView: UIImageView!
+    @IBOutlet private var filmNameLabel: UILabel!
+    @IBOutlet private var descriptionTextView: UITextView!
+    @IBOutlet private var filmVideoWebView: WKWebView!
+    @IBOutlet private var ratingAndDateLabel: UILabel!
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addInfoToItems()
         addSubviews()
     }
+
     // MARK: - Setups
     // MARK: Private
     private func addInfoToItems() {
@@ -34,11 +31,13 @@ final class InfoAboutFilmController: UIViewController {
         guard let url = film?.youtubeLink else { return }
         filmVideoWebView.load(URLRequest(url: url))
     }
+
     private func addSubviews() {
         descriptionTextView.layer.borderColor = UIColor.opaqueSeparator.cgColor
         descriptionTextView.layer.borderWidth = 1
     }
-    private func addInfoToYear () {
+
+    private func addInfoToYear() {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "Star.png")
         let attachmentString = NSMutableAttributedString(attachment: attachment)
@@ -52,14 +51,15 @@ final class InfoAboutFilmController: UIViewController {
         ]
         let thirdAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1),
-            NSAttributedString.Key.font: UIFont.manrope(ofSize: 14, weight: .light)]
+            NSAttributedString.Key.font: UIFont.manrope(ofSize: 14, weight: .light)
+        ]
         guard let film = film else { return }
-            let firstString = NSMutableAttributedString(string: "  \(film.rating)", attributes: firstAttributes)
-            let secondString = NSAttributedString(string: "/10", attributes: secondAttributes)
-            let thirdString = NSAttributedString(string: " \(film.date)", attributes: thirdAttributes)
-            attachmentString.append(firstString)
-            attachmentString.append(secondString)
-            attachmentString.append(thirdString)
-            ratingAndDateLabel.attributedText = attachmentString
-        }
+        let firstString = NSMutableAttributedString(string: "  \(film.rating)", attributes: firstAttributes)
+        let secondString = NSAttributedString(string: "/10", attributes: secondAttributes)
+        let thirdString = NSAttributedString(string: " \(film.date)", attributes: thirdAttributes)
+        attachmentString.append(firstString)
+        attachmentString.append(secondString)
+        attachmentString.append(thirdString)
+        ratingAndDateLabel.attributedText = attachmentString
     }
+}
