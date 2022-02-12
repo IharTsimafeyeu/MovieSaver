@@ -27,7 +27,7 @@ final class FilmNameController: UIViewController {
         do {
             try checkText()
         } catch PossibleErrors.emptyField {
-            alertForFilmName("Please fill textfield")
+            alertForFilmName("Please fill movie name")
         } catch PossibleErrors.overLimit {
             alertForFilmName("It's incorrect text")
         } catch {
