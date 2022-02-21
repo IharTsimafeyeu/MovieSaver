@@ -6,6 +6,7 @@ final class InfoAboutFilmController: UIViewController {
     // MARK: Public
     // MARK: Properties
     public var film: Film?
+    private var trailerFilm = ""
     // MARK: - Outlets
     @IBOutlet private var filmImageView: UIImageView!
     @IBOutlet private var filmNameLabel: UILabel!
@@ -28,7 +29,8 @@ final class InfoAboutFilmController: UIViewController {
             descriptionTextView.text = film.description
             addInfoToYear()
         }
-        guard let url = film?.youtubeLink else { return }
+//        guard let url = film?.youtubeLink else { return }
+        guard let url = URL(string: "https://www.youtube.com/\(film?.youtubeLink)") else { return }
         filmVideoWebView.load(URLRequest(url: url))
     }
 
