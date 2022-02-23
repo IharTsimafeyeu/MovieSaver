@@ -84,7 +84,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Ix-0M-ikT">
                                         <rect key="frame" x="19" y="153" width="376" height="174"/>
                                         <color key="backgroundColor" name="ViewBackgroundColor"/>
-                                        <color key="textColor" name="ViewBackgroundColor"/>
+                                        <color key="textColor" name="ElementBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -93,7 +93,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
-                                    <wkWebView alpha="0.0" contentMode="scaleAspectFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="68y-R7-3kG">
+                                    <wkWebView contentMode="scaleAspectFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="68y-R7-3kG">
                                         <rect key="frame" x="15" y="347" width="384" height="283"/>
                                         <color key="backgroundColor" name="ViewBackgroundColor"/>
                                         <color key="tintColor" name="ViewBackgroundColor"/>

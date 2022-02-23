@@ -16,29 +16,28 @@ final class InfoAboutFilmController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         addInfoToItems()
-        addSubviews()
     }
-
     // MARK: - Setups
     // MARK: Private
     private func addInfoToItems() {
         if let film = film {
             filmNameLabel.text = film.name
-            filmImageView.image = film.image
+            filmImageView.image = UIImage(data: film.image)
             descriptionTextView.text = film.description
             addInfoToYear()
+            trailerFilm = film.youtubeLink
         }
-//        guard let url = film?.youtubeLink else { return }
-        guard let url = URL(string: "https://www.youtube.com/\(film?.youtubeLink)") else { return }
-        filmVideoWebView.load(URLRequest(url: url))
+        let url = URL(string: "https://www.youtube.com/\(trailerFilm)")
+        let request = URLRequest(url: url!)
+        filmVideoWebView.load(request)
     }
-
-    private func addSubviews() {
+    private func setupUI() {
         descriptionTextView.layer.borderColor = UIColor.opaqueSeparator.cgColor
         descriptionTextView.layer.borderWidth = 1
+        filmVideoWebView.layer.borderWidth = 0.5
     }
-
     private func addInfoToYear() {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "Star.png")

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35066E0C2780D13700DD5B0A /* AddNewFilmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35066E0A2780D13700DD5B0A /* AddNewFilmController.swift */; };
+		350B13D927C6AB38004E98FE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B13D827C6AB38004E98FE /* UserDefaults.swift */; };
 		351CCC2D2780C43A00AFDD6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CCC2B2780C43A00AFDD6E /* TableViewCell.swift */; };
 		351CCC2E2780C43A00AFDD6E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351CCC2C2780C43A00AFDD6E /* TableViewCell.xib */; };
 		3521792D278F286000FFBAC8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3521792C278F286000FFBAC8 /* String+.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		35066E0A2780D13700DD5B0A /* AddNewFilmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmController.swift; sourceTree = "<group>"; };
+		350B13D827C6AB38004E98FE /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		351CCC2B2780C43A00AFDD6E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		351CCC2C2780C43A00AFDD6E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		3521792C278F286000FFBAC8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				35E1110E27879AF600BCE781 /* Model.swift */,
+				350B13D827C6AB38004E98FE /* UserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				3521792F278F289300FFBAC8 /* UITextField+.swift in Sources */,
 				35497E7C2782218500D9B5AE /* FilmNameController.swift in Sources */,
 				35497E7A27821DE200D9B5AE /* ReleaseDateController.swift in Sources */,
+				350B13D927C6AB38004E98FE /* UserDefaults.swift in Sources */,
 				35D49B952787139100202E1C /* InfoAboutFilmController.swift in Sources */,
 				35D178D9277F0A75005AF01C /* ViewController.swift in Sources */,
 				3555C91327917E3C00CF42D2 /* UIFont+.swift in Sources */,
