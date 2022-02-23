@@ -49,10 +49,11 @@ final class AddNewFilmController: UIViewController {
         let film = Film(name: filmNameLabel.text ?? "",
                         rating: ratingLabel.text ?? "",
                         date: releaseDateLabel.text ?? "",
-                        image: filmPhotoImageView.image ?? UIImage(imageLiteralResourceName: "empty.png"),
-                        youtubeLink: URL(string: youtubeLinkLabel.text!)!,
+                        image: (filmPhotoImageView.image?.pngData())!,
+                        youtubeLink: youtubeLinkLabel.text ?? "",
                         description: descriptionTextView.text ?? "")
         delegate?.saveFilm(film: film)
+        UserDefaultsManager.instance.saveWatchedFilm(watchedFilm: film)
         navigationController?.popViewController(animated: true)
     }
 

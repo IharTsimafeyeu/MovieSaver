@@ -20,10 +20,8 @@ final class FilmNameController: UIViewController {
         super.viewDidLoad()
         setupTextField()
     }
-
     // MARK: - Actions
     @IBAction private func saveFilmName(_ sender: UIButton) {
-
         do {
             try checkText()
         } catch PossibleErrors.emptyField {
@@ -34,7 +32,6 @@ final class FilmNameController: UIViewController {
             print("Unexpected error")
         }
     }
-
     // MARK: - Helpers
     // MARK: Private
     private func alertForFilmName(_ msg: String) {
@@ -44,7 +41,6 @@ final class FilmNameController: UIViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
-
     // MARK: Private
     // MARK: - Setups
     private func setupTextField() {
@@ -54,7 +50,6 @@ final class FilmNameController: UIViewController {
         filmNameTextField.autocapitalizationType = .sentences
     }
     private func checkText() throws {
-
         if filmNameTextField.text?.isEmpty == true {
             throw PossibleErrors.emptyField
         }
@@ -63,9 +58,10 @@ final class FilmNameController: UIViewController {
                 throw PossibleErrors.overLimit
             }
         }
-        filmNameTextField.text = ""
+        let text = filmNameTextField.text ?? ""
+        delegate?.updateName(filmName: text)
+        navigationController?.popViewController(animated: true)
     }
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

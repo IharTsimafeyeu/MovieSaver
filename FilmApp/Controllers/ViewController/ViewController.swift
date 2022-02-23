@@ -4,13 +4,21 @@ final class ViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet var tableView: UITableView!
     // MARK: - Properties
-    var filmsArray: [Film] = []
+    private var filmsArray: [Film] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        filmsArray = UserDefaultsManager.instance.getWatchedFilm()
+    }
     // MARK: - Actions
     @IBAction func addNewFilm(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -20,7 +28,6 @@ final class ViewController: UIViewController {
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
-
     // MARK: - Setups
     private func setupTableView() {
         title = "My Movie List"
@@ -31,7 +38,6 @@ final class ViewController: UIViewController {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil),
                            forCellReuseIdentifier: TableViewCell.identifier)
     }
-
     private func ratingMovieInfo(_ indexPath: IndexPath) -> NSMutableAttributedString {
         let firstAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.black,
@@ -49,13 +55,20 @@ final class ViewController: UIViewController {
         return firstString
     }
 }
-
 // MARK: UITableViewDelegate, UITableViewDataSource
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         filmsArray.count
     }
-
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            UserDefaultsManager.instance.restoreDeletedFilm(deletedFilm:
+                                                                self.filmsArray.remove(at: indexPath.row))
+            UserDefaultsManager.instance.updateFilms(updatedFilm:
+                                                        self.filmsArray)
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: TableViewCell.identifier, for: indexPath
@@ -66,7 +79,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailInfoController = storyboard.instantiateViewController(
@@ -82,6 +94,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: SaveFilmDelegate {
     func saveFilm(film: Film) {
         filmsArray.append(film)
-        tableView.reloadData()
     }
 }

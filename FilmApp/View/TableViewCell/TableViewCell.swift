@@ -18,7 +18,7 @@ final class TableViewCell: UITableViewCell {
     func setupCellData(parameters: Film) {
         filmNameLabel.text = parameters.name
         ratingFilmLabel.text = parameters.rating
-        filmLogoImageView.image = parameters.image
+        filmLogoImageView.image = UIImage(data: parameters.image)
 }
     func setupShadowForCell() {
         containerView.layer.shadowColor = UIColor.black.cgColor
